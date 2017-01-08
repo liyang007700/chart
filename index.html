@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en_US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/ibm_16px.png">
+    <title>Chart</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/unslider.css">
+    <link rel="stylesheet" href="css/unslider-dots.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-logo" href="https://www.ibm.com/us-en/" alt = "ibm homepage en_us"><img alt="Brand" src="img/IBM_logo.png"/></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+            <!--
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked" role="tablist">
+                    <li role="presentation" class="active"><a href="#">Home</a></li>
+                    <li role="presentation"><a href="#">Option1</a></li>
+                    <li role="presentation"><a href="#">Option2</a></li>
+                    <li role="presentation"><a href="#">Option3</a></li>
+                    <li role="presentation"><a href="#">Option4</a></li>
+                </ul>
+            </div>-->
+    <div class="banner">
+        <ul>
+            <li id = "li-1">
+              <div class="container-fluid">
+                  <div class = "row">
+                      <div class = "u-chart  col-md-10" id = "Dash1"></div>
+                      <div class = "col-md-2">
+                          <div class = "u-form-time">
+                              <p><label for = "start">Start Time: </label><input id = "start" type = "date" value = "2016-01-01"/></p>
+                              <p><label for = "end">End Time: </label></label><input id = "end" type = "date" value = "2016-02-01"/></p>
+                              <button id = "submitDate">Submit</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </li>
+            <li id = "li-2">
+              <div class="container-fluid">
+                  <div class = "row">
+                      <div class = "u-chart  col-md-10" id = "Dash2"></div>
+                      <div class = "col-md-2">
+                        <p>
+                          <button class = "u-btn-block">start</button>
+                        </p>
+                        <p>
+                          <button class = "u-btn-block">stop</button>
+                        </p>
+                      </div>
+                  </div>
+              </div>
+            </li>
+            <li id = "li-3"><div></div></li>
+            <li id = "li-4"><div></div></li>
+        </ul>
+    </div>
+
+
+    <div class="container-fluid">
+        <h1 class="page-header">Dashboard</h1>
+
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 chart-small">
+              <div class = "chart-small-main">
+
+              </div>
+              <div class = "chart-small-panel">
+                <div class = "u-form-time">
+                    <div class = "inputs-row">
+                      <label for = "start">Start Time: </label><input id = "start" type = "date" value = "2016-01-01"/>
+                    </div>
+                    <div  class = "inputs-row">
+                      <label for = "end">End Time: </label></label><input id = "end" type = "date" value = "2016-02-01"/>
+                    </div>
+                    <button id = "submitDate">Submit</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 chart-small">
+              <div class = "chart-small-main">
+
+              </div>
+              <div class = "chart-small-panel">
+                <div  class = "inputs-row">
+                  <button class = "u-btn-block">start</button>
+                </div>
+                <div  class = "inputs-row">
+                  <button class = "u-btn-block">stop</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/unslider.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+    function formatData(timeValue,ServiceData){
+        var result = [];
+        for (var i = 0;i < timeValue.length;i++){
+          result[i] = [timeValue[i],ServiceData[i]
+          ];
+        }
+        return result;
+    }
+    $(function() {
+        $('.banner').unslider({
+                      speed: 500,               //  The speed to animate each slide (in milliseconds)
+                      delay: 3000,              //  The delay between slide animations (in milliseconds)
+                      complete: function() {},  //  A function that gets called after every slide animation
+                      keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+                      dots: true,               //  Display dot navigation
+                      fluid: false              //  Support responsive design. May break non-responsive designs
+            });
+        var myChart0 = echarts.init($('#Dash1')[0]);
+        var myChart1 = echarts.init($('#Dash2')[0]);
+
+        var timeData = ['2016-11-23 08:30:00','2016-11-24 09:30:00','2016-11-25 10:30:00','2016-11-26 11:30:00','2016-11-27 12:30:00','2016-11-28 13:30:00','2016-11-29 14:30:00','2016-11-30 15:30:00','2016-12-01 16:30:00','2016-12-02 17:30:00','2016-12-03 18:30:00','2016-12-04 19:30:00'];
+
+        var timeValue = timeData.slice(0);//copy a new array
+        /*data.value transform*/
+
+        timeValue.forEach(function(e,index,array){
+            //console.log(new Date(e));
+            //timeValue[index] = new Date(e);
+            var year = parseInt(e.substr(0,4)) ;
+            var month = parseInt(e.substr(5,2)) - 1 ;
+            var day = parseInt(e.substr(8,2)) ;
+            var hour = parseInt(e.substr(11,2)) ;
+            timeValue[index] = Date.UTC(year,month,day,hour);
+        });
+
+        var x = new Date();
+        console.log(x.getTimezoneOffset());
+
+        console.log(timeValue[0]);
+
+        var ServiceCount = [11587,9047,3601,380,444,10335,12617,14167,17011,6856,6625,1536];
+        var TotalResponseTime = [15227,6780,2222,1666,373,19470,13294,15804,23493,8297,7313,1744];
+        var AverageResponseTime = [384,207,241,4361,463,684,450,341,369,368,431,476];
+
+        var ServiceCountData = formatData(timeValue,ServiceCount);
+        var TotalResponseTimeData = formatData(timeValue,TotalResponseTime);
+        var AverageResponseTimeData = formatData(timeValue,AverageResponseTime);
+        var option = {
+            title: {
+                text: 'Service  Request Elapsed  time  ',
+                subtext: 'source from dev server',
+                x: 'center',
+                top: 10
+            },
+
+            tooltip: {//提示框组件
+              show:true,
+                trigger: 'axis',
+                axisPointer: {
+                    animation: false
+                }
+            },
+            legend: {//图例组件。
+                data:['ServiceRequestCount','Total ResponseTime','Average ResponseTime'],
+                orient:'vertical',
+                left: 20,
+                x: 'left'
+            },
+            toolbox: {//工具栏
+              show:true,
+              showTitle:true,//是否显示提示文字
+              itemSize: 20,//图标大小px
+              itemGap: 20,//图标之间的间距
+              right: 20,//图标距离容器右侧距离
+                feature: {
+                    saveAsImage: {
+                      title:"save as\n png",
+                    },
+                  dataZoom: {
+                    show: false,
+                    title: {
+                      zoom: "zoom",
+                      back: "zoom Undo",
+                    },
+                    xAxisIndex:[0,1]
+                  }
+                }
+            },
+            dataZoom: [
+                {
+                  type: 'inside',
+                    realtime: true,
+                    start: 0,
+                    end: 100,
+                    xAxisIndex: [0, 1]
+                },
+                {
+                    type: 'slider',
+                    show:true,
+                    realtime: true,
+                    start: 30,
+                    end: 70,
+                    xAxisIndex: [0, 1]
+                }
+            ],
+            grid: [{
+                left: 100,
+                right: 100,
+                top: 100,
+                height: '35%'
+            }, {
+                left: 100,
+                right: 100,
+                top: '60%',
+                height: '35%'
+            }],
+            xAxis : [
+                {
+                    type : 'time',
+                    //boundaryGap : false,
+                    //axisLine: {onZero: true}
+                    //data: timeData
+                },
+                {
+                    gridIndex: 1,
+                    type : 'time',
+                    axisLabel:{
+                      show: false,
+                    },
+                    //boundaryGap : false,
+                    //axisLine: {onZero: true},
+                    //data: timeData,
+                    position: 'top'
+                }
+            ],
+            yAxis : [
+                {
+                  offset : 0,
+                    name : 'ServiceRequestCount',
+                    type : 'value',
+
+                },
+                {
+                    gridIndex: 1,
+                    name : 'TotalElapsedTime (s)',
+                    type : 'value',
+                    inverse: true,
+                    inside :true ,
+
+                },
+                 {
+                    gridIndex: 1,
+                    name : 'AvgElapsedTime(ms)',
+                    type : 'value',
+                    inverse: true,
+
+                }
+            ],
+            series : [
+                {
+                    name:'ServiceRequestCount',
+                    type:'line',
+                    symbolSize: 4,
+                    hoverAnimation: false,
+                    data: ServiceCountData
+                },
+                {
+                    name:'Total ResponseTime',
+                    type:'line',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    symbolSize: 4,
+                    hoverAnimation: false,
+                    data:TotalResponseTimeData
+                },
+                {
+                    name:'Average ResponseTime',
+                    type:'line',
+                    xAxisIndex: 1,
+                    yAxisIndex: 2,
+                    symbolSize: 4,
+                    hoverAnimation: false,
+                    data:AverageResponseTimeData
+                }
+            ]
+        };
+
+        myChart0.setOption(option);
+        myChart1.setOption(option);
+        myChart2.setOption(option);
+        myChart3.setOption(option);
+    });
+    </script>
+</body>
+</html>
