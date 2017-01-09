@@ -17,6 +17,7 @@
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="css/dashboard.css" rel="stylesheet">
     <link rel="stylesheet" href="css/unslider.css">
     <link rel="stylesheet" href="css/unslider-dots.css">
@@ -32,12 +33,14 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
+        <!--
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </button>
+        </button>-->
+        <button id = "nav-menu" class = "navbar-btn hvr-icon-hang"><span>1<span></button>
         <a class="navbar-logo" href="https://www.ibm.com/us-en/" alt = "ibm homepage en_us"><img alt="Brand" src="img/IBM_logo.png"/></a>
       </div>
 
@@ -59,6 +62,14 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+  <div class = "g-sidebar">
+    <ul class = "m-nav">
+			<li><a href="#">HomePage</a></li>
+			<li><a href="#">Page 1</a></li>
+			<li><a href="#">Page 2</a></li>
+			<li><a href="#">Page 3</a></li>
+		</ul>
+  </div>
             <!--
             <div class="col-md-3">
                 <ul class="nav nav-pills nav-stacked" role="tablist">
@@ -70,77 +81,77 @@
                 </ul>
             </div>-->
   <div class="banner">
-        <ul>
-            <li id = "li-1">
-              <div class="container-fluid">
-                  <div class = "row">
-                      <div class = "u-chart  col-md-10" id = "Dash1"></div>
-                      <div class = "col-md-2">
-                          <div class = "u-form-time">
-                              <p><label for = "start">Start Time: </label><input id = "start" type = "date" value = "2016-01-01"/></p>
-                              <p><label for = "end">End Time: </label></label><input id = "end" type = "date" value = "2016-02-01"/></p>
-                              <button id = "submitDate">Submit</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </li>
-            <li id = "li-2">
-              <div class="container-fluid">
-                  <div class = "row">
-                      <div class = "u-chart  col-md-10" id = "Dash2"></div>
-                      <div class = "col-md-2">
-                        <p>
-                          <button class = "u-btn-block">start</button>
-                        </p>
-                        <p>
-                          <button class = "u-btn-block">stop</button>
-                        </p>
-                      </div>
-                  </div>
-              </div>
-            </li>
-            <li id = "li-3"><div></div></li>
-            <li id = "li-4"><div></div></li>
-        </ul>
-    </div>
-
-
-    <div class="container-fluid">
-        <h1 class="page-header">Dashboard</h1>
-
-          <div class="row">
-            <div class="col-xs-6 col-sm-6 chart-small">
-              <div class = "chart-small-main">
-
-              </div>
-              <div class = "chart-small-panel">
+    <ul>
+      <li id = "li-1">
+        <div class="container-fluid">
+          <div class = "row">
+            <div class = "u-chart  col-md-10" id = "Dash1"></div>
+              <div class = "col-md-2">
                 <div class = "u-form-time">
-                    <div class = "inputs-row">
-                      <label for = "start">Start Time: </label><input id = "start" type = "date" value = "2016-01-01"/>
-                    </div>
-                    <div  class = "inputs-row">
-                      <label for = "end">End Time: </label></label><input id = "end" type = "date" value = "2016-02-01"/>
-                    </div>
-                    <button id = "submitDate">Submit</button>
+                  <p><label for = "start">Start Time: </label><input id = "start" type = "date" value = "2016-01-01"/></p>
+                  <p><label for = "end">End Time: </label></label><input id = "end" type = "date" value = "2016-02-01"/></p>
+                  <button id = "submitDate">Submit</button>
                 </div>
               </div>
-            </div>
-            <div class="col-xs-6 col-sm-6 chart-small">
-              <div class = "chart-small-main">
-
-              </div>
-              <div class = "chart-small-panel">
-                <div  class = "inputs-row">
-                  <button class = "u-btn-block">start</button>
-                </div>
-                <div  class = "inputs-row">
-                  <button class = "u-btn-block">stop</button>
-                </div>
-              </div>
+          </div>
+        </div>
+      </li>
+      <li id = "li-2">
+        <div class="container-fluid">
+          <div class = "row">
+            <div class = "u-chart  col-md-10" id = "Dash2"></div>
+            <div class = "col-md-2">
+              <p>
+                <button class = "u-btn-block">start</button>
+              </p>
+              <p>
+                <button class = "u-btn-block">stop</button>
+              </p>
             </div>
           </div>
+        </div>
+      </li>
+      <li id = "li-3"><div></div></li>
+      <li id = "li-4"><div></div></li>
+    </ul>
+  </div>
+
+
+  <div class="container-fluid">
+    <h1 class="page-header">Dashboard</h1>
+
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 chart-small">
+        <div class = "chart-small-main">
+
+        </div>
+        <div class = "chart-small-panel">
+          <div class = "u-form-time">
+            <div class = "inputs-row">
+              <label for = "start">Start Time: </label><input id = "start" type = "date" value = "2016-01-01"/>
+            </div>
+            <div  class = "inputs-row">
+              <label for = "end">End Time: </label></label><input id = "end" type = "date" value = "2016-02-01"/>
+            </div>
+            <button id = "submitDate">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 chart-small">
+        <div class = "chart-small-main">
+
+        </div>
+        <div class = "chart-small-panel">
+          <div  class = "inputs-row">
+            <button class = "u-btn-block">start</button>
+          </div>
+          <div  class = "inputs-row">
+            <button class = "u-btn-block">stop</button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -162,6 +173,38 @@
         return result;
     }
     $(function() {
+        /*init the slide pages*/
+        $('#nav-menu').hover(function () {
+    								         $(".g-sidebar").addClass("active");//左侧导航栏滑出。
+    								         $(".g-sidebar").addClass("active");//主内容缩放适应。
+    								         },
+    							           function () {
+    								         $(".g-sidebar").removeClass("active");//左侧导航栏滑入。
+    								         $(".g-sidebar").removeClass("active");//主内容扩展适应。
+    								         });
+        $(".m-nav li").hover(function (e){
+                			       //列表li获得聚焦
+                          	 $(e.target).parent().siblings().removeClass("z-sel");
+                             $(e.target).parent().addClass("z-sel");
+                             //列表内容<a>获得聚焦
+                             $(e.target).addClass("z-sel");
+                          	 },
+                    				 function (e){
+                    				 //列表li取消聚焦
+                        		 $(e.target).parent().removeClass("z-sel");
+                        		 //列表内容<a>取消聚焦
+                        		 $(e.target).removeClass("z-sel");
+                    				 });
+
+        $(".g-sidebar").hover(function (e){
+                						 $(this).addClass("active");//鼠标位于导航栏，导航栏保持滑出。
+                						 $(".g-bd").addClass("active");//鼠标位于导航栏，主区域保持缩放。
+                    				 },
+                	    		    function (e){
+                	        	 $(this).removeClass("active");	//鼠标离开导航栏，导航栏滑入。
+                	        	 $(".g-bd").removeClass("active");//鼠标离开导航栏，主区域扩展。
+                	    			 });
+
         $('.banner').unslider({
                       speed: 500,               //  The speed to animate each slide (in milliseconds)
                       delay: 3000,              //  The delay between slide animations (in milliseconds)
@@ -170,14 +213,14 @@
                       dots: true,               //  Display dot navigation
                       fluid: false              //  Support responsive design. May break non-responsive designs
             });
+        //two echart instance
         var myChart0 = echarts.init($('#Dash1')[0]);
         var myChart1 = echarts.init($('#Dash2')[0]);
-
+        /*example data*/
         var timeData = ['2016-11-23 08:30:00','2016-11-24 09:30:00','2016-11-25 10:30:00','2016-11-26 11:30:00','2016-11-27 12:30:00','2016-11-28 13:30:00','2016-11-29 14:30:00','2016-11-30 15:30:00','2016-12-01 16:30:00','2016-12-02 17:30:00','2016-12-03 18:30:00','2016-12-04 19:30:00'];
 
         var timeValue = timeData.slice(0);//copy a new array
         /*data.value transform*/
-
         timeValue.forEach(function(e,index,array){
             //console.log(new Date(e));
             //timeValue[index] = new Date(e);
@@ -187,10 +230,9 @@
             var hour = parseInt(e.substr(11,2)) ;
             timeValue[index] = Date.UTC(year,month,day,hour);
         });
-
+        /*test local timezone and global time zone difference
         var x = new Date();
-        console.log(x.getTimezoneOffset());
-
+        console.log(x.getTimezoneOffset());*/
         console.log(timeValue[0]);
 
         var ServiceCount = [11587,9047,3601,380,444,10335,12617,14167,17011,6856,6625,1536];
@@ -200,6 +242,7 @@
         var ServiceCountData = formatData(timeValue,ServiceCount);
         var TotalResponseTimeData = formatData(timeValue,TotalResponseTime);
         var AverageResponseTimeData = formatData(timeValue,AverageResponseTime);
+
         var option = {
             title: {
                 text: 'Service  Request Elapsed  time  ',
@@ -212,8 +255,15 @@
               show:true,
                 trigger: 'axis',
                 axisPointer: {
-                    animation: false
-                }
+                    animation: true,
+                    type: 'line'
+                },
+                padding: 0,
+                textStyle: {
+                  color: '#000'
+                },
+                position:['70%','0%'],
+                backgroundColor: 'rgba(0,0,0,0)'
             },
             legend: {//图例组件。
                 data:['ServiceRequestCount','Total ResponseTime','Average ResponseTime'],
@@ -342,8 +392,8 @@
 
         myChart0.setOption(option);
         myChart1.setOption(option);
-        myChart2.setOption(option);
-        myChart3.setOption(option);
+        //myChart2.setOption(option);
+        //myChart3.setOption(option);
     });
     </script>
 </body>
