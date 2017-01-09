@@ -29,39 +29,14 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <!--
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>-->
-        <button id = "nav-menu" class = "navbar-btn hvr-icon-hang"><span>1<span></button>
-        <a class="navbar-logo" href="https://www.ibm.com/us-en/" alt = "ibm homepage en_us"><img alt="Brand" src="img/IBM_logo.png"/></a>
-      </div>
+  <header class = "header-fixed-top">
+    <button id = "nav-menu" class = "navbar-btn hvr-icon-hang"><span>1<span></button>
+    <a class="navbar-logo" href="https://www.ibm.com/us-en/" alt = "ibm homepage en_us"><img alt="Brand" src="img/IBM_logo.png"/></a>
+    <p class="navbar-title">Inspector</p>
+  </header>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+
+
   <div class = "g-sidebar">
     <ul class = "m-nav">
 			<li><a href="#">HomePage</a></li>
@@ -182,7 +157,7 @@
     								         $(".g-sidebar").removeClass("active");//左侧导航栏滑入。
     								         $(".g-sidebar").removeClass("active");//主内容扩展适应。
     								         });
-        $(".m-nav li").hover(function (e){
+        $(".m-nav li a").hover(function (e){
                 			       //列表li获得聚焦
                           	 $(e.target).parent().siblings().removeClass("z-sel");
                              $(e.target).parent().addClass("z-sel");
@@ -198,11 +173,11 @@
 
         $(".g-sidebar").hover(function (e){
                 						 $(this).addClass("active");//鼠标位于导航栏，导航栏保持滑出。
-                						 $(".g-bd").addClass("active");//鼠标位于导航栏，主区域保持缩放。
+                						 $(".g-sidebar").addClass("active");//鼠标位于导航栏，主区域保持缩放。
                     				 },
                 	    		    function (e){
                 	        	 $(this).removeClass("active");	//鼠标离开导航栏，导航栏滑入。
-                	        	 $(".g-bd").removeClass("active");//鼠标离开导航栏，主区域扩展。
+                	        	 $(".g-sidebar").removeClass("active");//鼠标离开导航栏，主区域扩展。
                 	    			 });
 
         $('.banner').unslider({

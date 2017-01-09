@@ -1,7 +1,42 @@
 /*
  * Base structure
  */
+ /* 重置样式CSS */
+ *{
+ 	margin: 0;
+ 	padding: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: baseline;
+ 	box-sizing:border-box;
+ }
+ ol, ul {
+ 	list-style: none;
+ }
+ blockquote, q {
+ 	quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+ 	content: '';
+ 	content: none;
+ }
+ table {
+ 	border-collapse: collapse;
+ 	border-spacing: 0;
+ }
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure,
+ footer, header, hgroup, menu, nav, section {
+ 	display: block;
+ }
+ /* 默认样式 */
 
+ body {
+ 	line-height: 1;
+ 	font-family: 'Helvetica Neue', Helvetica, STHeiTi, sans-serif;
+ 	font-size:16px;
+ }
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
@@ -13,20 +48,42 @@ body {
  * Top navigation
  * Hide default border to remove 1px line.
  */
+ .header-fixed-top {
+   position:fixed;
+   z-index:9999;
+   top:0px;
+   left:0px;
+   width:100%;
+   height:50px;
+   background-color:#222;
+ }
 .navbar-logo {
+  display:inline-block;
   width:50px;
   height:50px;
   padding:0;
-  margin-left:10px;
 }
 .navbar-btn{
+  display: inline-block;
   border: none;
+  margin-left: 20px;
   margin-bottom: 20px;
   background-color: #222;
   color: white;
 }
 .navbar-btn span {
   visibility:hidden;;
+}
+.navbar-title {
+  display:inline-block;
+  height:50px;
+  border:0px;
+  padding:0px;
+  margin:0 0 0 20px;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  color:white;
 }
 .g-sidebar.active{
   position:fixed;
@@ -67,8 +124,9 @@ body {
   position: relative;
   display: block;
   padding: 15px 60px;
+  font-size: 1.5rem;
 }
-.m-nav >li >a.z-sel{
+.m-nav >li > a.z-sel{
 	color:#333;
 }
 
@@ -123,10 +181,10 @@ body {
 
 .chart-small{
   height:800px;
-  border:1px solid red;
 }
 .chart-small-main{
   height:90%;
+  border:1px solid red;
 }
 .chart-small-panel{
   height:10%;
@@ -215,4 +273,9 @@ body {
   animation-fill-mode: forwards;
   -webkit-animation-direction: normal, alternate;
   animation-direction: normal, alternate;
+}
+
+.col-md-2,
+.chart-small-main　{
+  border:1px solid red;
 }
