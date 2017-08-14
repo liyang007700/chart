@@ -11,9 +11,11 @@
 ## 播放器初始化完成后，向document对象抛出“videoReady"事件，用户可以监听这个事件,监听方法格式如下：
 ```
     /*
-     * 回调函数在'videoReady'触发后调用
+     * 回调函数在'videoReady'触发后调用,用户可以在函数体中写希望播放器加载完毕后，
+     * 被执行的任何自定义方法。
      * 参数e: 事件对象
      * 参数msg: 'Video is ready!'
+     * 
     */
     $(document).on('videoReady', function(e, msg){
         console.log(msg); 
